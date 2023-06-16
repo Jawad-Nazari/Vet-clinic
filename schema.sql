@@ -78,7 +78,7 @@ it should also keep track of the date of the visit. */
 
 CREATE TABLE visits (
     animal_id INT, vet_id INT, visit_date DATE,
-    PRIMARY KEY (animal_id, vet_id),
+    PRIMARY KEY (animal_id, vet_id,visit_date),
     FOREIGN KEY (animal_id) REFERENCES animals (id),
     FOREIGN KEY (vet_id) REFERENCES vets (id)
    );
