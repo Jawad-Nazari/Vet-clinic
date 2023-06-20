@@ -87,3 +87,10 @@ ALTER TABLE owners ADD COLUMN email VARCHAR(120);
 CREATE INDEX visits_animal_id_index ON visits (animal_id);
 CREATE INDEX visits_vet_index on visits (vet_id DESC);
 CREATE INDEX email_asc ON owners(email ASC);
+
+CREATE TABLE med_histories_treatments (
+    med_history_id INT,
+    treatment_id INT,
+    FOREIGN KEY (med_history_id) REFERENCES medical_histories(id),
+    FOREIGN KEY (treatment_id) REFERENCES treatments(id)
+);
