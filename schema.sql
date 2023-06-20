@@ -77,8 +77,11 @@ Create a "join table" called visits to handle this relationship,
 it should also keep track of the date of the visit. */
 
 CREATE TABLE visits (
-    animal_id INT, vet_id INT, visit_date DATE,
-    PRIMARY KEY (animal_id, vet_id,visit_date),
+    id serial primary key, animal_id INT, vet_id INT, visit_date DATE,
     FOREIGN KEY (animal_id) REFERENCES animals (id),
     FOREIGN KEY (vet_id) REFERENCES vets (id)
    );
+
+CREATE INDEX visits_animal_id_index ON visits (animal_id);
+CREATE INDEX visits_vet_index on visits (vet_id DESC);
+CREATE INDEX email_asc ON owners(email ASC);
