@@ -94,3 +94,10 @@ CREATE TABLE med_histories_treatments (
     FOREIGN KEY (med_history_id) REFERENCES medical_histories(id),
     FOREIGN KEY (treatment_id) REFERENCES treatments(id)
 );
+
+CREATE INDEX medical_histories_patient_index ON medical_histories(patient_id);
+    CREATE INDEX invoice_items_index ON invoice_items(invoice_id);
+    CREATE INDEX invoice_items_treatment_id_index ON invoice_items(treatment_id);
+    CREATE INDEX med_histories_treatments_index ON med_histories_treatments(med_history_id);
+    CREATE INDEX med_histories_treatments_treatment_id_index ON med_histories_treatments(treatment_id);
+    CREATE INDEX invoices_medical_history_id_index ON invoices(medical_history_id);
